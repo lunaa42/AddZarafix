@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "547108762112",
+    "project_id": "addzara-d605a",
+    "storage_bucket": "addzara-d605a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547108762112:android:11d76caeafffed63499ee5",
+        "android_client_info": {
+          "package_name": "com.example.addzara"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5ewdn_pXMnIGE8tHtSwkgz7vfqhVwg0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
