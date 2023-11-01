@@ -1,6 +1,7 @@
 package com.example.addzara;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.view.LayoutInflater;
 
 import android.os.Bundle;
 

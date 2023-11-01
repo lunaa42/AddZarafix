@@ -5,6 +5,7 @@
 
         import androidx.annotation.NonNull;
         import androidx.fragment.app.Fragment;
+        import androidx.recyclerview.widget.RecyclerView;
 
         import android.util.Log;
         import android.view.LayoutInflater;
@@ -28,6 +29,8 @@ public class AllZaraFragment extends Fragment {
 
     private FirebaseServices fbs;
     private ArrayList<Zara> zara;
+    private ZaraAdapter adapter;
+    private RecyclerView rvZara;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -82,7 +85,8 @@ public class AllZaraFragment extends Fragment {
 
         fbs = FirebaseServices.getInstance();
         zara = new ArrayList<>();
-        fbs.getFire().collection("restaurants").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        rvZara = getView().findViewById(R.id.rvZaraAllZaraFragment);
+        fbs.getFire().collection("Zara places").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 for (DocumentSnapshot dataSnapshot: queryDocumentSnapshots.getDocuments()){
@@ -90,6 +94,9 @@ public class AllZaraFragment extends Fragment {
 
                     zara.add(zara1);
                 }
+                 adapter = new ZaraAdapter(getContext(), zara);
+                rvZara.setAdapter(adapter);
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
