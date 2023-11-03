@@ -32,43 +32,19 @@ public class ZaraAdapter extends RecyclerView.Adapter<ZaraAdapter.ViewHolder> {
     @NonNull
     @Override
     public ZaraAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        mInflater = LayoutInflater.from(parent.getContext());
+          LayoutInflater  mInflater = LayoutInflater.from(parent.getContext());
         View view = mInflater.inflate(R.layout.za_item, parent, false);
         return new ZaraAdapter.ViewHolder(view);
     }
 
-
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-            Zara z = mData.get(position);
-            holder.position = holder.getAdapterPosition();
-            Optional<User> user = fbs.get
-
-    }
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Zara c = mData.get(position);
+        Zara z = mData.get(position);
         holder.position = holder.getAdapterPosition();
-
-        Optional<User> user = fbs.getUsers().stream().filter(b -> b.ge().equals(mData.get(position).getCommentatorUsername())).findFirst();
         //Picasso.get().load(ap.getPhoto()).into(holder.ivBarber);
         holder.tvCustomerUsername.setText(mData.get(position).getProduct());
         holder.tvPhone.setText(mData.get(position).getPhone());
     }
-
-    @Override
-        public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-            Zara c = mData.get(position);
-            holder.position = holder.getAdapterPosition();
-            Optional<User> user = fbs.getUsers().stream().filter(b -> b.getUsername().equals(mData.get(position).getCommentatorUsername())).findFirst();
-
-
-            //Picasso.get().load(ap.getPhoto()).into(holder.ivBarber);
-            holder.tvCustomerUsername.setText(user.get().() + " " + user.get().ge());
-            holder.tvPhone.setText(mData.get(position).getPhone());
-            holder.rbZara.setRating((float) (mData.get(position).getProduct()));
-        }
-
         @Override
         public int getItemCount() {
             return mData.size();
@@ -101,4 +77,4 @@ public class ZaraAdapter extends RecyclerView.Adapter<ZaraAdapter.ViewHolder> {
             }
         }
     }
-}
+
