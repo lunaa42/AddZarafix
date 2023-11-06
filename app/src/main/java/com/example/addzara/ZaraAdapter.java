@@ -12,6 +12,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.firestore.auth.User;
@@ -64,17 +65,17 @@ public class ZaraAdapter extends RecyclerView.Adapter<ZaraAdapter.ViewHolder> {
             }
 
             @Override
-            public void onClick(View v) {/*
-                ((MainActivity)context).getMessage().showMessageDialog(context, mData.get(position).getComment());
-                //FragmentTransaction ft= getActivity().getSupportFragmentManager().beginTransaction();
-            /*
-            ((MainActivity)context).getIntent().putExtra("barber", mData.get(position).getUsername());
-            ((MainActivity)context).getIntent().putExtra("customer", FirebaseServices.getInstance().getAuth().getCurrentUser().getEmail());
+            public void onClick(View v) {
+               // FirebaseServices ft= context().getSupportFragmentManager().beginTransaction();
+            ((MainActivity)context).getIntent().putExtra("Product", mData.get(position).getProduct());
+            ((MainActivity)context).getIntent().putExtra("customer Email", FirebaseServices.getInstance().getAuth().getCurrentUser().getEmail());
             ((MainActivity)context).getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.frameLayout, new AddNewAppointmentFragment())
+                    .replace(R.id.frameLayout, new AddZaraFragment())
                     .addToBackStack(null)
-                    .commit(); */
+                    .commit();
             }
         }
+
+
     }
 

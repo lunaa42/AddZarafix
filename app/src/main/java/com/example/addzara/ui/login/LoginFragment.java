@@ -170,7 +170,7 @@ public class LoginFragment extends Fragment {
         etUsername = getView().findViewById(R.id.etUsernameLogin);
         etPassword = getView().findViewById(R.id.etPasswordLogin);
         btnLogin = getView().findViewById(R.id.btnloginLogin);
-        tvSignupLink = getView().findViewById(R.id.tvSignupLink);
+        tvSignupLink = getView().findViewById(R.id.btnSignup);
         tvSignupLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
